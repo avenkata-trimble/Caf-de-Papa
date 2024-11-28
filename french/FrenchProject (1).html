@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Mea Culpa' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/amalfi-coast');
+        @import url('https://fonts.cdnfonts.com/css/brittany-signature');
+
+        .header{
+            text-align: center;
+            font-family: 'Mea Culpa', sans-serif;
+            font-size: 30px;
+            color: #7B4A12;
+            left: 0;
+            top: 0;
+            padding: 25px 9%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            visibility: hidden;
+            opacity: 0;
+            animation: show-content 1.5s linear forwards;
+            animation-delay: 1.2s ;
+            }
+        
+        .header img{
+            height: 150px;
+            position: relative;
+            top: 20px;
+        }
+
+        @keyframes show-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+body {
+    background-color:rgb(255, 237, 215);
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 220vh; /* Makes page scrollable */
+}
+
+.phrase-container {
+    position: relative;
+    top: 50px; /* Adjust as needed to position below the header */
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px); /* Initial position for animation */
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.phrase {
+    font-size: 4rem;
+    color: #7B4A12; /* Matching the café vibe */
+    font-family: 'Amalfi Coast', sans-serif;
+}
+
+/* Scroll effect */
+.show-phrase {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f4e3d6;
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    font-family: 'Brittany Signature', sans-serif;
+}
+
+.menu{
+    color: burlywood;
+    text-align: center;
+    font-size: 60px;
+    padding: 50px;
+    margin: 50px;
+    transform: translateY(50px); /* Initial position for animation */
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.menu-container {
+   opacity: 0;               /* Initial state: hidden */
+   transform: translateY(50px);  /* Initial downward shift */
+   transition: opacity 1.5s ease, transform 1.5s ease;
+   text-align: center;          /* Center the menu */
+}
+
+.menu-title{
+    font-family: 'Brittany Signature', sans-serif;
+    padding: 0.1rem;
+    font-size: 5rem;
+    color:burlywood;
+}
+
+.menu-list {
+   list-style-type: none;     /* Remove bullet points */
+   padding: 30px;
+   margin: 30px;
+   font-family: 'Mea Culpa', sans-serif; /* Match header style */
+   font-size: 2.5rem;
+}
+
+.show-menu {
+   opacity: 1;               /* Fully visible */
+   transform: translateY(0);  /* Reset position */
+}
+
+/* General Styles */
+body {
+    background-color: rgb(255, 237, 215);
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    font-family: 'Mea Culpa', sans-serif;
+    font-size: 2rem;  /* Scalable size */
+    color: #7B4A12;
+    padding: 2rem 5%;  /* Reduced padding */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .header {
+        font-size: 1.5rem;  /* Smaller header font */
+        padding: 1.5rem;
+    }
+    .header img {
+        height: 6rem;  /* Reduce image size */
+    }
+    .phrase {
+        font-size: 2rem;  /* Adjust font size for phrases */
+    }
+    .menu {
+        font-size: 2rem;
+        padding: 1.5rem;
+        margin: 1.5rem;
+    }
+    .menu-list {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.2rem;  /* Even smaller for small screens */
+        padding: 1rem;
+    }
+    .header img {
+        height: 5rem;
+    }
+    .phrase {
+        font-size: 1.5rem;
+    }
+    .menu-title {
+        font-size: 2rem;
+    }
+    .menu-list {
+        font-size: 1.2rem;
+    }
+}
+
+/* Footer */
+.footer {
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+    </style>
+    <title>Papa's Café</title>
+</head>
+<body>
+    <header class="header"><h1 class="h1inside">Papa's</h1> <img src="Logo3.png" alt="Papa's Café"><h1 class="h1inside"> Café</h1></header>
+    
+    <div class="phrase-container">
+        <h2 class="phrase">Bonjour! Commencez frais</h2>
+    </div>
+
+    <div class="menu-container">
+        <h2 class="menu-title">Menu</h2>
+        <ul class="menu-list">
+           <li>pain - tous types                                 ...               4,50$</li>
+           <li>œuf - tous types                                  ...               2,10$</li>
+           <li>crêpes                                            ...               8,12$</li>
+           <li>gaufre                                            ...               9,30$</li>
+           <li>lard                                              ...              10,15$</li>
+           <li>Nourriture de jour: spécial de papa               ...              16,00$</li>
+           <li>tous types de jus                                 ...               2,00$</li>
+           <li>lait - chocolate ou normale                       ...               5,00$</li>
+           <li>chocolate chaud                                   ...               7,00$</li>
+           <li>café ou thé                                       ...               6,00$</li>
+        </ul>
+     </div>
+    
+    
+    <footer class="footer">©2024 Coordonnées: 01.45.84.32.25</footer>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const phraseContainer = document.querySelector('.phrase-container');
+            const position = phraseContainer.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+    
+            if (position < windowHeight - 100) {
+                phraseContainer.classList.add('show-phrase');
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+   const menuContainer = document.querySelector('.menu-container');
+   const position = menuContainer.getBoundingClientRect().top;
+   const windowHeight = window.innerHeight;
+
+   if (position < windowHeight - 100) {  // Trigger animation near viewport
+      menuContainer.classList.add('show-menu');
+   }
+});
+    </script>
+</body>
+</html>
